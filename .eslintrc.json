@@ -6,7 +6,11 @@
       "parser": "astro-eslint-parser",
       "parserOptions": {
         "parser": "@typescript-eslint/parser",
-        "extraFileExtensions": [".astro"]
+        "extraFileExtensions": [".astro"],
+        "ecmaVersion": "latest"
+      },
+      "env": {
+        "es6": true
       }
     }
   ]
