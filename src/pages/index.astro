@@ -1,6 +1,7 @@
 ---
-import NavBar from '../components/navbar.astro';
 import Star from '../components/star';
+import NavBar from '../components/navbar.astro';
+import About from '../components/about.astro';
 
 const stars = Array(100).fill(null);
 ---
@@ -18,11 +19,12 @@ const stars = Array(100).fill(null);
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400&display=swap" rel="stylesheet"> 
   </head>
   <body class="dark:bg-bgc text-white">
-    <NavBar />
     <div class="relative">
       {
         stars.map(() => <Star client:load />)
       }
     </div>
+    <NavBar />
+    <About />
   </body>
 </html>

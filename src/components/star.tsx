@@ -15,11 +15,10 @@ function Star() {
 	}, []);
 
 	return (
-		<div className={`bg-white rounded-full w-1 h-1 fixed`} style={{
+		<div className={`bg-white rounded-full w-1 h-1 fixed -z-10`} style={{
 			left: x,
 			top: y
-		}}>
-		</div>
+		}}/>
 	);
 }
 
