@@ -1,0 +1,21 @@
+---
+import Project from './project.astro';
+
+interface Frontmatter {
+  name: string,
+  repo: string,
+  description: string,
+  stack: string[]
+};
+
+const projects  = await Astro.glob<Frontmatter>('../pages/projects/*.md');
+---
+
+<section class="lg:m-10">
+	<h2 class="text-center text-4xl">Projects</h2>
+	<div class="grid grid-cols-[repeat(auto-fill,minmax(400px,1fr))] m-10 gap-28">
+		{
+			projects.map((project) => <Project project={project} />)
+		}
+	</div>
+</section>
