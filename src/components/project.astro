@@ -10,7 +10,7 @@ interface Props {
 
 const { project } = Astro.props;
 ---
-<div class="flex flex-col justify-start items-center bg-orange-600 rounded-lg p-5 text-black">
+<div class="flex flex-col justify-start items-center bg-orange-600 rounded-lg p-2 lg:p-5 text-black">
 	<a href={project.url} class="text-center text-3xl">{project.frontmatter.name}</a>
 	<a href={project.frontmatter.repo} target="_blank" class="text-center text-xl text-blue-700">{project.frontmatter.repo}</a>
 	<p class="my-5 text-center text-xl">{project.frontmatter.description}</p>
