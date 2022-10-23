@@ -3,19 +3,19 @@
 <section id="contact" class="w-screen bg-yellow-400 p-6">
 	<h2 class="text-black text-center text-6xl m-4">Contact Me</h2>
 	<form action="/contact" method="post" enctype="application/x-www-form-urlencoded">
-		<div class="flex flex-row justify-center items-center">
-			<div class="flex flex-col justify-center items-start mr-10">
+		<div class="flex flex-col-reverse lg:flex-row justify-center items-center">
+			<div class="flex flex-col justify-center items-start lg:mr-10">
 				<label for="name" class="text-black text-2xl">Name</label>
-				<input type="text" name="name" class="rounded text-black text-xl p-2 w-96" required />
+				<input type="text" name="name" class="rounded text-black text-xl p-2 w-80 lg:w-96" required />
 
 				<label for="email" class="text-black mt-5 text-2xl">Email</label>
-				<input type="email" name="email" class="rounded text-black text-xl p-2 w-96" required />
+				<input type="email" name="email" class="rounded text-black text-xl p-2 w-80 lg:w-96" required />
 
 				<button class="bg-blue-500 p-2 rounded text-3xl self-center mt-10">Submit</button>
 			</div>
 			<div class="flex flex-col justify-center items-start">
 				<label for="message" class="text-black rounded text-2xl">Message</label>
-				<textarea name="message" class="rounded text-black text-xl p-2 w-96 h-72" required></textarea>
+				<textarea name="message" class="rounded text-black text-xl p-2 w-80 lg:w-96 h-72" required></textarea>
 			</div>
 		</div>
 	</form>
