@@ -1,7 +1,6 @@
 ---
 import Star from '../components/star';
 import NavBar from '../components/navbar.astro';
-import ContactError from '../components/contactError.astro';
 
 const stars = Array(100).fill(null);
 ---
@@ -25,6 +24,6 @@ const stars = Array(100).fill(null);
       }
     </div>
     <NavBar />
-	  <ContactError />
+	  <h2 class="text-center text-3xl">Something went wrong... Try emailing me directly at <a class="text-blue-700" href={`mailto:${import.meta.env.PUBLIC_EMAIL_TO}?subject=[PORTFOLIO] `}>{import.meta.env.PUBLIC_EMAIL_TO}</a></h2>
   </body>
 </html>
