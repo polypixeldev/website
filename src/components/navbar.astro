@@ -1,8 +1,12 @@
 ---
 ---
 <nav class="sticky bg-bgc bg-opacity-70 z-10 w-screen top-0 flex flex-row justify-center items-center lg:grid lg:grid-cols-2 p-3">
-	<div class="flex flex-row justify-center items-center">
-		<h1 class="text-5xl"><a href="/">Samuel Fernandez</a></h1>
+	<div class="flex flex-row justify-around lg:justify-center items-center w-screen lg:w-auto">
+		<h1 class="text-5xl text-center w-min lg:w-max"><a href="/">Samuel Fernandez</a></h1>
+		<div class="flex flex-row justify-around items-center lg:mx-5">
+			<a target="_blank" href="https://github.com/polypixeldev"><img src="/images/contact/gh.png" class="bg-white rounded-full m-2 w-7 h-7"></a>
+			<a href={`mailto:${import.meta.env.EMAIL_FROM}`}><i class="fa-xl fa-regular fa-envelope"></i></a>
+		</div>
 	</div>
 	<div class="flex-row justify-around items-center text-4xl hidden lg:flex">
 		<a href="/#about">About Me</a>
