@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@types/nodemailer": "^6.4.7",
-    "@types/react": "^18.0.21",
+    "@types/react": "^18.0.34",
     "@typescript-eslint/parser": "^5.38.0",
     "eslint": "^8.37.0",
     "eslint-plugin-astro": "^0.26.1",
