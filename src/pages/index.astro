@@ -15,9 +15,12 @@ const stars = Array(100).fill(null);
     <meta name="generator" content={Astro.generator} />
     <title>Samuel Fernandez</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400&display=swap" rel="stylesheet">
+    <style is:global>
+      @font-face {
+        font-family: "Dosis";
+        src: url('fonts/dosis/Dosis-Regular.ttf') format('truetype');
+      }
+    </style>
 
     <script src="https://kit.fontawesome.com/8779c4d8c1.js" crossorigin="anonymous"></script>
   </head>
