@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/projectLayout.astro
 name: ComputerStacks
-repo: https://github.com/Poly-Pixel/computerstacks
+repo: https://github.com/polypixeldev/computerstacks
 description: A digital collection of computer-related resources and support
 stack:
   - MongoDB
