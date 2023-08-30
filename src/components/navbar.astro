@@ -1,15 +1,30 @@
 ---
+
 ---
-<nav class="sticky bg-bgc bg-opacity-70 z-10 w-screen top-0 flex flex-row justify-center font-space-grotesk items-center lg:grid lg:grid-cols-2 p-3">
-	<div class="flex flex-row justify-around lg:justify-center items-center w-screen lg:w-auto">
-		<h1><a href="/" class="text-5xl text-center w-min lg:w-max">Samuel Fernandez</a></h1>
-		<div class="flex flex-row justify-around items-center lg:mx-5">
-			<a target="_blank" href="https://github.com/polypixeldev"><img src="/images/contact/gh.png" class="bg-white rounded-full m-2 w-7 h-7"></a>
-			<a href={`mailto:${import.meta.env.EMAIL_FROM}`}><i class="fa-xl fa-regular fa-envelope"></i></a>
-		</div>
-	</div>
-	<div class="flex-row justify-around items-center text-4xl hidden lg:flex">
-		<a href="/#about">About Me</a>
-		<a href="/#projects">Projects</a>
-	</div>
+
+<nav
+  class="sticky top-0 z-10 flex w-screen flex-row items-center justify-center bg-bgc bg-opacity-70 p-3 font-space-grotesk lg:grid lg:grid-cols-2">
+  <div
+    class="flex w-screen flex-row items-center justify-around lg:w-auto lg:justify-center">
+    <h1>
+      <a href="/" class="w-min text-center text-5xl lg:w-max">
+        Samuel Fernandez
+      </a>
+    </h1>
+    <div class="flex flex-row items-center justify-around lg:mx-5">
+      <a target="_blank" href="https://github.com/polypixeldev">
+        <img
+          src="/images/contact/gh.png"
+          class="m-2 h-7 w-7 rounded-full bg-white"
+        />
+      </a>
+      <a href={`mailto:${import.meta.env.EMAIL_FROM}`}>
+        <i class="fa-xl fa-regular fa-envelope"></i>
+      </a>
+    </div>
+  </div>
+  <div class="hidden flex-row items-center justify-around text-4xl lg:flex">
+    <a href="/#about">About Me</a>
+    <a href="/#projects">Projects</a>
+  </div>
 </nav>

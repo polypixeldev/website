@@ -16,7 +16,7 @@ function Star() {
 
   return (
     <div
-      className="bg-white blur-sm rounded-full w-1 h-1 fixed -z-10"
+      className="fixed -z-10 h-1 w-1 rounded-full bg-white blur-sm"
       style={{
         left: x,
         top: y,

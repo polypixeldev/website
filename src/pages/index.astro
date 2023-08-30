@@ -1,8 +1,8 @@
 ---
-import Star from '../components/star';
-import NavBar from '../components/navbar.astro';
-import About from '../components/about.astro';
-import Projects from '../components/projects.astro';
+import Star from "../components/star";
+import NavBar from "../components/navbar.astro";
+import About from "../components/about.astro";
+import Projects from "../components/projects.astro";
 
 const stars = Array(100).fill(null);
 ---
@@ -18,26 +18,26 @@ const stars = Array(100).fill(null);
     <style is:global>
       @font-face {
         font-family: "Dosis";
-        src: url('fonts/Dosis.ttf') format('truetype');
+        src: url("fonts/Dosis.ttf") format("truetype");
       }
       @font-face {
         font-family: "Space Grotesk";
-        src: url('fonts/SpaceGrotesk.ttf') format('truetype');
+        src: url("fonts/SpaceGrotesk.ttf") format("truetype");
       }
     </style>
 
-    <script src="https://kit.fontawesome.com/8779c4d8c1.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/8779c4d8c1.js"
+      crossorigin="anonymous"></script>
   </head>
-  <body class="dark:bg-bgc text-white">
+  <body class="text-white dark:bg-bgc">
     <div class="relative">
-      {
-        stars.map(() => <Star client:load />)
-      }
+      {stars.map(() => <Star client:load />)}
     </div>
     <NavBar />
-    <div class="flex justify-center items-center">
+    <div class="flex items-center justify-center">
       <div class="w-5/6">
-        <div class="flex flex-col justify-start items-center">
+        <div class="flex flex-col items-center justify-start">
           <About />
           <Projects />
         </div>

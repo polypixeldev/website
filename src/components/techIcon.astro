@@ -1,11 +1,12 @@
 ---
 interface Props {
-	name: string
+  name: string;
 }
 
 const { name } = Astro.props;
 ---
-<div class="flex flex-col justify-center items-center">
-	<img src={`/images/techIcons/${name}.png`} class="w-10 h-10 m-3" />
-	<p>{name}</p>
+
+<div class="flex flex-col items-center justify-center">
+  <img src={`/images/techIcons/${name}.png`} class="m-3 h-10 w-10" />
+  <p>{name}</p>
 </div>

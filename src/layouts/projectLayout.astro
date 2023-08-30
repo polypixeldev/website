@@ -1,16 +1,17 @@
 ---
-import Star from '../components/star';
+import Star from "../components/star";
 import NavBar from "../components/navbar.astro";
 import TechIcon from "../components/techIcon.astro";
 
-import type { MarkdownLayoutProps } from 'astro';
-import type ProjectFrontmatter from '../interfaces/ProjectFrontmatter';
+import type { MarkdownLayoutProps } from "astro";
+import type ProjectFrontmatter from "../interfaces/ProjectFrontmatter";
 
 type Props = MarkdownLayoutProps<ProjectFrontmatter>;
 
 const { frontmatter } = Astro.props;
 const stars = Array(100).fill(null);
 ---
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -19,31 +20,35 @@ const stars = Array(100).fill(null);
     <meta name="generator" content={Astro.generator} />
     <title>Samuel Fernandez</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@400&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="dark:bg-bgc text-white">
+  <body class="text-white dark:bg-bgc">
     <div class="relative">
-      {
-        stars.map(() => <Star client:load />)
-      }
+      {stars.map(() => <Star client:load />)}
     </div>
     <NavBar />
     <main class="m-10 bg-black">
-      <div class="flex flex-col justify-start items-start">
-        <div class="flex flex-row justify-start items-center">
-          <h2 class="text-6xl mr-10">{frontmatter.name}</h2>
-          <a class="text-blue-400 text-xl mr-10" href={frontmatter.repo}>{frontmatter.repo}</a>
-          {
-            frontmatter.stack.map((tech) => <TechIcon name={tech} />)
-          }
+      <div class="flex flex-col items-start justify-start">
+        <div class="flex flex-row items-center justify-start">
+          <h2 class="mr-10 text-6xl">{frontmatter.name}</h2>
+          <a class="mr-10 text-xl text-blue-400" href={frontmatter.repo}
+            >{frontmatter.repo}</a
+          >
+          {frontmatter.stack.map((tech) => <TechIcon name={tech} />)}
         </div>
         <p class="text-3xl">{frontmatter.description}</p>
       </div>
-      <div class="flex flex-row justify-between items-start text-xl mt-10">
+      <div class="mt-10 flex flex-row items-start justify-between text-xl">
         <slot />
-        <img src={`/images/projectImages/${frontmatter.name}.png`} class="w-[calc(100vw/2)]"/>
+        <img
+          src={`/images/projectImages/${frontmatter.name}.png`}
+          class="w-[calc(100vw/2)]"
+        />
       </div>
     </main>
   </body>
