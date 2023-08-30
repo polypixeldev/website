@@ -9,20 +9,33 @@ interface Props {
 }
 
 const { project } = Astro.props;
+const colors = [
+  "orange",
+  "green",
+  "blue",
+  "purple",
+  "red",
+  "dark-green",
+  "yellow",
+];
+
+const color = colors[Math.floor(Math.random() * colors.length)];
 ---
 
-<div
-  class="flex flex-col items-center justify-start rounded-lg bg-orange-600 p-2 text-black lg:p-5">
-  <a href={project.url} class="text-center text-3xl"
-    >{project.frontmatter.name}</a
-  >
-  <a
-    href={project.frontmatter.repo}
-    target="_blank"
-    class="text-center text-xl text-blue-700">{project.frontmatter.repo}</a
-  >
-  <p class="my-5 text-center text-xl">{project.frontmatter.description}</p>
-  <div class="flex flex-row items-center justify-center">
-    {project.frontmatter.stack.map((tech) => <TechIcon name={tech} />)}
+<div class="inline-block w-full">
+  <div
+    class={`bg-${color} [filter:drop-shadow(5px_5px_5px_theme('colors.${color}-border'))] border-4 border-${color}-border m-2 flex flex-col items-center justify-start rounded-lg p-2 text-black lg:p-5`}>
+    <a href={project.url} class="text-center text-3xl"
+      >{project.frontmatter.name}</a
+    >
+    <a
+      href={project.frontmatter.repo}
+      target="_blank"
+      class="text-blue-700 text-center text-xl">{project.frontmatter.repo}</a
+    >
+    <p class="my-5 text-center text-xl">{project.frontmatter.description}</p>
+    <div class="flex flex-row items-center justify-center">
+      {project.frontmatter.stack.map((tech) => <TechIcon name={tech} />)}
+    </div>
   </div>
 </div>
