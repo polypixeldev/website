@@ -1,18 +1,12 @@
 ---
 import Project from "./project.astro";
+import type ProjectFrontmatter from "../interfaces/ProjectFrontmatter";
 
-interface Frontmatter {
-  name: string;
-  repo: string;
-  description: string;
-  stack: string[];
-}
-
-const projects = await Astro.glob<Frontmatter>("../pages/projects/*.md");
+const projects = await Astro.glob<ProjectFrontmatter>("../pages/projects/*.md");
 ---
 
-<section id="projects" class="w-full">
-  <h2 class="text-center font-space-grotesk text-5xl">Projects</h2>
+<section id="projects" class="my-5 w-full">
+  <h2 class="my-2 text-center font-space-grotesk text-5xl">Projects</h2>
   <div class="m-2 columns-1 md:columns-2 lg:columns-3">
     {projects.map((project) => <Project project={project} />)}
   </div>

@@ -1,0 +1,33 @@
+---
+import type { MarkdownInstance } from "astro";
+import type BlogFrontmatter from "../interfaces/BlogFrontmatter";
+
+interface Props {
+  blog: MarkdownInstance<BlogFrontmatter>;
+}
+
+const { blog: blog } = Astro.props;
+const colors = [
+  "orange",
+  "green",
+  "blue",
+  "purple",
+  "red",
+  "dark-green",
+  "yellow",
+];
+
+const color = colors[Math.floor(Math.random() * colors.length)];
+---
+
+<a
+  href={blog.url}
+  class={`w-full bg-${color} [filter:drop-shadow(5px_5px_5px_theme('colors.${color}-border'))] border-4 border-${color}-border m-2 flex flex-col items-start justify-start rounded-lg p-2 text-black lg:p-5`}>
+  <div class="flex w-full flex-row items-center justify-between">
+    <p class="text-center text-4xl">{blog.frontmatter.name}</p>
+    <p class="text-center text-3xl">
+      {new Date(blog.frontmatter.date).toDateString()}
+    </p>
+  </div>
+  <p class="mt-5 text-center text-2xl">{blog.frontmatter.preview}</p>
+</a>
