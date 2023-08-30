@@ -7,28 +7,46 @@
   <div
     class="flex w-screen flex-col items-center justify-start md:flex-row md:justify-around lg:w-auto lg:justify-center">
     <h1>
-      <a href="/" class="w-min text-center text-4xl md:text-5xl lg:w-max">
+      <a href="/" class="group w-min text-center text-4xl md:text-5xl lg:w-max">
         Samuel Fernandez
+        <span
+          class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
+        ></span>
       </a>
     </h1>
     <div class="flex flex-row items-center justify-around lg:mx-5">
       <a target="_blank" href="https://github.com/polypixeldev">
         <img
           src="/images/contact/gh.png"
-          class="m-2 h-7 w-7 rounded-full bg-white md:h-10 md:w-10"
+          class="m-2 h-7 w-7 rounded-full bg-white transition-all duration-300 hover:[box-shadow:0px_0px_10px_#fff] md:h-10 md:w-10"
         />
       </a>
       <a href={`mailto:${import.meta.env.EMAIL_FROM}`}>
         <img
           src="/images/contact/email.svg"
-          class="m-2 h-7 w-7 md:h-10 md:w-10"
+          class="m-2 w-7 rounded-md transition-all duration-300 hover:[box-shadow:0px_0px_10px_#fff] md:w-10"
         />
       </a>
     </div>
   </div>
   <div class="hidden flex-row items-center justify-around text-4xl lg:flex">
-    <a href="/#about">About Me</a>
-    <a href="/#projects">Projects</a>
-    <a href="/#blog">Blog</a>
+    <a href="/#about" class="group">
+      About Me
+      <span
+        class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
+      ></span>
+    </a>
+    <a href="/#projects" class="group">
+      Projects
+      <span
+        class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
+      ></span>
+    </a>
+    <a href="/#blog" class="group">
+      Blog
+      <span
+        class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
+      ></span>
+    </a>
   </div>
 </nav>
