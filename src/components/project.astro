@@ -31,7 +31,7 @@ const color = colors[Math.floor(Math.random() * colors.length)];
     <div class="flex flex-row items-center justify-center">
       <img
         src="/images/contact/gh.png"
-        class="mx-2 h-7 w-7 rounded-full border-2 border-black bg-white"
+        class="mx-1 h-7 w-7 rounded-full border-2 border-black bg-white md:mx-2"
       />
       <a
         href={project.frontmatter.repo}
@@ -40,7 +40,7 @@ const color = colors[Math.floor(Math.random() * colors.length)];
       >
     </div>
     <p class="my-5 text-center text-xl">{project.frontmatter.description}</p>
-    <div class="flex flex-row items-center justify-center">
+    <div class="flex flex-row flex-wrap items-center justify-center">
       {project.frontmatter.stack.map((tech) => <TechIcon name={tech} />)}
     </div>
   </div>
