@@ -49,7 +49,7 @@ module.exports = {
         "dark-green-border": "#1A5000",
         green: "#3CFDA0",
         "green-border": "#00B05C",
-        yellow: "#FFE95",
+        yellow: "#FFE920",
         "yellow-border": "#7D7100",
         purple: "#FF3AF7",
         "purple-border": "#A0009A",

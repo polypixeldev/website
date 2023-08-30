@@ -28,11 +28,17 @@ const color = colors[Math.floor(Math.random() * colors.length)];
     <a href={project.url} class="text-center text-3xl"
       >{project.frontmatter.name}</a
     >
-    <a
-      href={project.frontmatter.repo}
-      target="_blank"
-      class="text-blue-700 text-center text-xl">{project.frontmatter.repo}</a
-    >
+    <div class="flex flex-row items-center justify-center">
+      <img
+        src="/images/contact/gh.png"
+        class="mx-2 h-7 w-7 rounded-full border-2 border-black bg-white"
+      />
+      <a
+        href={project.frontmatter.repo}
+        target="_blank"
+        class="text-blue-700 text-center text-xl">{project.frontmatter.repo}</a
+      >
+    </div>
     <p class="my-5 text-center text-xl">{project.frontmatter.description}</p>
     <div class="flex flex-row items-center justify-center">
       {project.frontmatter.stack.map((tech) => <TechIcon name={tech} />)}
