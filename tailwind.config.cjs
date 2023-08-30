@@ -15,6 +15,7 @@ module.exports = {
       },
       colors: {
         bgc: "#080404",
+        border: "rgba(89, 89, 89, 0.75)",
       },
     },
   },
