@@ -22,7 +22,7 @@ const color = colors[Math.floor(Math.random() * colors.length)];
 
 <a
   href={blog.url}
-  class={`w-full bg-${color} [filter:drop-shadow(5px_5px_5px_theme('colors.${color}-border'))] border-4 border-${color}-border m-2 flex flex-col items-start justify-start rounded-lg p-2 text-black lg:p-5`}>
+  class={`w-full bg-${color} transition-all duration-300 hover:[filter:drop-shadow(5px_5px_5px_theme('colors.${color}-border'))] border-4 border-${color}-border m-2 flex flex-col items-start justify-start rounded-lg p-2 text-black lg:p-5`}>
   <div class="flex w-full flex-row items-center justify-between">
     <p class="text-center text-4xl">{blog.frontmatter.name}</p>
     <p class="text-center text-3xl">
