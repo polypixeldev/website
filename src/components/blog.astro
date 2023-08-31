@@ -5,7 +5,7 @@ import type BlogFrontmatter from "../interfaces/BlogFrontmatter";
 const blogs = await Astro.glob<BlogFrontmatter>("../pages/blog/*.md");
 ---
 
-<section id="blog" class="my-5 w-full">
+<section id="blog" class="z-20 my-5 w-full">
   <h2 class="my-2 text-center font-space-grotesk text-5xl">Blog</h2>
   <div class="m-2">
     {blogs.map((blog) => <BlogEntry blog={blog} />)}

@@ -1,0 +1,35 @@
+---
+import Floater from "./floater.astro";
+const floaters = [
+  {
+    id: "impostor",
+    name: "Impostor",
+    description: "Samuel was not The Impostor. 1 Impostor remains.",
+    image: "/images/floaters/impostor.png",
+  },
+  {
+    id: "hackclub",
+    name: "Hack Club",
+    description:
+      "Hack Club is a global nonprofit network of high school makers & student-led coding clubs! Check it out at https://hackclub.com",
+    image: "/images/floaters/hackclub.svg",
+  },
+  {
+    id: "icon",
+    name: "Me!",
+    description: "My icon on the interwebs. Made in blender!",
+    image: "/images/floaters/icon.png",
+  },
+];
+---
+
+{
+  floaters.map((floater) => (
+    <Floater
+      id={floater.id}
+      name={floater.name}
+      description={floater.description}
+      image={floater.image}
+    />
+  ))
+}
