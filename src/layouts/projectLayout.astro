@@ -2,6 +2,9 @@
 import Star from "../components/star";
 import NavBar from "../components/navbar.astro";
 import TechIcon from "../components/techIcon.astro";
+import { Image } from "astro:assets";
+
+import gh from "../images/contact/gh.png";
 
 import type { MarkdownLayoutProps } from "astro";
 import type ProjectFrontmatter from "../interfaces/ProjectFrontmatter";
@@ -43,8 +46,9 @@ const stars = Array(100).fill(null);
             {frontmatter.name}
           </h2>
           <div class="flex w-5/6 flex-row items-center justify-center">
-            <img
-              src="/images/contact/gh.png"
+            <Image
+              src={gh}
+              alt="The GitHub logo"
               class="mx-1 h-7 w-7 rounded-full border-2 border-black bg-white md:mx-2"
             />
             <a

@@ -1,5 +1,7 @@
 ---
-
+import { Image } from "astro:assets";
+import gh from "../images/contact/gh.png";
+import email from "../images/contact/email.svg";
 ---
 
 <nav
@@ -16,14 +18,16 @@
     </h1>
     <div class="flex flex-row items-center justify-around lg:mx-5">
       <a target="_blank" href="https://github.com/polypixeldev">
-        <img
-          src="/images/contact/gh.png"
+        <Image
+          src={gh}
+          alt="The GitHub logo"
           class="m-2 h-7 w-7 rounded-full bg-white transition-all duration-300 hover:[box-shadow:0px_0px_10px_#fff] md:h-10 md:w-10"
         />
       </a>
       <a href={`mailto:${import.meta.env.EMAIL_FROM}`}>
-        <img
-          src="/images/contact/email.svg"
+        <Image
+          src={email}
+          alt="An email icon"
           class="m-2 w-7 rounded-md transition-all duration-300 hover:[box-shadow:0px_0px_10px_#fff] md:w-10"
         />
       </a>

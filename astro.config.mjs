@@ -11,4 +11,7 @@ export default defineConfig({
       devSourcemap: true,
     },
   },
+  experimental: {
+    assets: true,
+  },
 });

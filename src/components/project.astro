@@ -1,5 +1,8 @@
 ---
 import TechIcon from "./techIcon.astro";
+import { Image } from "astro:assets";
+
+import gh from "../images/contact/gh.png";
 
 import type { MarkdownInstance } from "astro";
 import type ProjectFrontmatter from "../interfaces/ProjectFrontmatter";
@@ -30,8 +33,9 @@ const color = colors[Math.floor(Math.random() * colors.length)];
       >{project.frontmatter.name}</a
     >
     <div class="flex flex-row items-center justify-center">
-      <img
-        src="/images/contact/gh.png"
+      <Image
+        src={gh}
+        alt="The GitHub logo"
         class="mx-1 h-7 w-7 rounded-full border-2 border-black bg-white md:mx-2"
       />
       <a
