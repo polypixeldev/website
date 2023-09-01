@@ -1,3 +1,3 @@
-# Personal Portfolio
+# Website
 
-My personal portfolio, built with Astro
+My website!
