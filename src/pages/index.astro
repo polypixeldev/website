@@ -1,5 +1,5 @@
 ---
-import Star from "../components/star";
+import Star from "../components/star.astro";
 import NavBar from "../components/navbar.astro";
 import About from "../components/about.astro";
 import Projects from "../components/projects.astro";
@@ -31,7 +31,9 @@ const stars = Array(100).fill(null);
   <body class="text-white dark:bg-bgc">
     <div>
       <Floaters />
-      {stars.map(() => <Star client:load />)}
+    </div>
+    <div class="fixed">
+      {stars.map(() => <Star />)}
     </div>
     <NavBar />
     <div class="flex items-center justify-center">
@@ -44,56 +46,7 @@ const stars = Array(100).fill(null);
       </div>
     </div>
 
-    <script>
-      // Credit to https://codepen.io/RobotWizard/pen/rRVKVa for animation code
-      const screenHeight = window.innerHeight;
-      const screenWidth = window.innerWidth;
-
-      const speed = 2;
-
-      let floaters = document.querySelectorAll(".floater");
-      floaters.forEach((floater) => {
-        const id = floater.id;
-        const dialog = document.getElementById(`${id}-dialog`);
-        dialog.close();
-        floater.addEventListener("click", () => {
-          dialog.showModal();
-          dialog.style.display = "flex";
-          dialog.querySelectorAll("button").forEach((button) => {
-            button.addEventListener("click", () => {
-              dialog.style.display = "none";
-              dialog.close();
-            });
-          });
-        });
-
-        let x = Math.random() * screenWidth;
-        let y = Math.random() * screenHeight;
-
-        const floaterW = floater!.clientWidth;
-        const floaterH = floater!.clientHeight;
-
-        let dirX = Math.random() + 0.25;
-        let dirY = Math.random() + 0.25;
-        function animate() {
-          if (y + floaterH >= screenHeight || y < 0) {
-            dirY *= -1;
-          }
-          if (x + floaterW >= screenWidth || x < 0) {
-            dirX *= -1;
-          }
-
-          x += dirX * speed;
-          y += dirY * speed;
-
-          floater!.style.left = x + "px";
-          floater!.style.top = y + "px";
-
-          window.requestAnimationFrame(animate);
-        }
-
-        window.requestAnimationFrame(animate);
-      });
-    </script>
+    <script src="../util/drawFloaters.ts"></script>
+    <script src="../util/drawStars.ts"></script>
   </body>
 </html>
