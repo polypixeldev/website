@@ -18,15 +18,21 @@ const stars = Array(100).fill(null);
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content={`Blog from Samuel Fernandez: ${frontmatter.name}'`}
+    />
     <title>Samuel Fernandez</title>
 
     <style is:global>
       @font-face {
         font-family: "Dosis";
+        font-display: swap;
         src: url("/fonts/Dosis.ttf") format("truetype");
       }
       @font-face {
         font-family: "Space Grotesk";
+        font-display: swap;
         src: url("/fonts/SpaceGrotesk.ttf") format("truetype");
       }
     </style>

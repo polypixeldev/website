@@ -22,15 +22,21 @@ const stars = Array(100).fill(null);
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content={`Samuel Fernandez's project '${frontmatter.name}'`}
+    />
     <title>Samuel Fernandez</title>
 
     <style is:global>
       @font-face {
         font-family: "Dosis";
+        font-display: swap;
         src: url("/fonts/Dosis.ttf") format("truetype");
       }
       @font-face {
         font-family: "Space Grotesk";
+        font-display: swap;
         src: url("/fonts/SpaceGrotesk.ttf") format("truetype");
       }
     </style>
@@ -70,6 +76,7 @@ const stars = Array(100).fill(null);
         class="z-20 mt-10 flex w-full flex-col items-start justify-start border-2 border-border bg-bgc p-5 text-3xl [filter:drop-shadow(5px_5px_20px_rgba(255,255,255,0.25))] md:w-5/6 md:px-10">
         <img
           src={`/images/projectImages/${frontmatter.name}.webp`}
+          alt={`A screenshot of ${frontmatter.name}`}
           class="mb-5 w-full self-center md:w-[calc(100vw/2)]"
         />
         <slot />

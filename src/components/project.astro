@@ -29,9 +29,7 @@ const color = colors[Math.floor(Math.random() * colors.length)];
   <div
     data-url={project.url}
     class={`projectDiv cursor-pointer bg-${color} transition-all duration-300 hover:[filter:drop-shadow(5px_5px_5px_theme('colors.${color}-border'))] border-4 border-${color}-border m-2 flex flex-col items-center justify-start rounded-lg p-2 text-black lg:p-5`}>
-    <a href={project.url} class="text-center text-3xl"
-      >{project.frontmatter.name}</a
-    >
+    <p class="text-center text-3xl">{project.frontmatter.name}</p>
     <div class="flex flex-row items-center justify-center">
       <Image
         src={gh}
