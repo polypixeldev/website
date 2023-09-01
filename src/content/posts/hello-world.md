@@ -1,7 +1,6 @@
 ---
-layout: ../../layouts/blogLayout.astro
 name: Hello World!
-date: 8/29/2023
+date: 2023-08-29
 preview: Welcome to my website!
 readingTime: 1
 ---

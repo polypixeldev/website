@@ -3,12 +3,13 @@ import Star from "../components/star.astro";
 import NavBar from "../components/navbar.astro";
 import Floaters from "../components/floaters.astro";
 
-import type { MarkdownLayoutProps } from "astro";
-import type BlogFrontmatter from "../interfaces/BlogFrontmatter";
+import type { CollectionEntry } from "astro:content";
 
-type Props = MarkdownLayoutProps<BlogFrontmatter>;
+type Props = {
+  entry: CollectionEntry<"posts">;
+};
 
-const { frontmatter } = Astro.props;
+const { entry }: Props = Astro.props;
 const stars = Array(100).fill(null);
 ---
 
@@ -20,7 +21,7 @@ const stars = Array(100).fill(null);
     <meta name="generator" content={Astro.generator} />
     <meta
       name="description"
-      content={`Blog from Samuel Fernandez: ${frontmatter.name}'`}
+      content={`Blog from Samuel Fernandez: ${entry.data.name}'`}
     />
     <title>Samuel Fernandez</title>
 
@@ -48,10 +49,11 @@ const stars = Array(100).fill(null);
     <main class="m-5 flex flex-col items-center justify-start bg-black md:m-10">
       <div class="z-20 flex w-full flex-col items-center justify-start">
         <h2 class="font-space-grotesk text-4xl md:text-5xl lg:text-6xl">
-          {frontmatter.name}
+          {entry.data.name}
         </h2>
         <p class="my-5 text-center text-3xl">
-          {frontmatter.date} • {frontmatter.readingTime} minute read
+          {entry.data.date.toDateString()} • {entry.data.readingTime} minute
+          read
         </p>
       </div>
       <div

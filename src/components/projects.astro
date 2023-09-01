@@ -1,8 +1,8 @@
 ---
+import { getCollection } from "astro:content";
 import Project from "./project.astro";
-import type ProjectFrontmatter from "../interfaces/ProjectFrontmatter";
 
-const projects = await Astro.glob<ProjectFrontmatter>("../pages/projects/*.md");
+const projects = await getCollection("projects");
 ---
 
 <section id="projects" class="z-20 my-5 w-full">
@@ -15,10 +15,10 @@ const projects = await Astro.glob<ProjectFrontmatter>("../pages/projects/*.md");
 <script>
   document.querySelectorAll(".projectDiv").forEach((div) => {
     div.addEventListener("click", () => {
-      const url = div.attributes.getNamedItem("data-url")?.value;
+      const slug = div.attributes.getNamedItem("data-slug")?.value;
 
-      if (url) {
-        window.location.href = url;
+      if (slug) {
+        window.location.href = `/projects/${slug}`;
       }
     });
   });

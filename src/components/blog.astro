@@ -1,13 +1,13 @@
 ---
-import BlogEntry from "./blogEntry.astro";
-import type BlogFrontmatter from "../interfaces/BlogFrontmatter";
+import { getCollection } from "astro:content";
+import Post from "./post.astro";
 
-const blogs = await Astro.glob<BlogFrontmatter>("../pages/blog/*.md");
+const blogs = await getCollection("posts");
 ---
 
 <section id="blog" class="z-20 my-5 w-full">
   <h2 class="my-2 text-center font-space-grotesk text-5xl">Blog</h2>
   <div class="m-2">
-    {blogs.map((blog) => <BlogEntry blog={blog} />)}
+    {blogs.map((blog) => <Post blog={blog} />)}
   </div>
 </section>
