@@ -13,4 +13,6 @@ export default defineConfig({
   experimental: {
     assets: true,
   },
+  // TODO: set to my site url
+  site: "SET_TO_SITE_URL",
 });
