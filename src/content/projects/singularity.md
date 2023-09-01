@@ -1,6 +1,6 @@
 ---
 name: Singularity
-repo: https://github.com/polypixeldev/Singularity
+repo: polypixeldev/Singularity
 description: A free, easy to use Discord bot
 stack:
   - MongoDB

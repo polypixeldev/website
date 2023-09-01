@@ -1,6 +1,6 @@
 ---
 name: ComputerStacks
-repo: https://github.com/polypixeldev/computerstacks
+repo: polypixeldev/computerstacks
 description: A digital collection of computer-related resources and support
 stack:
   - NextAuth

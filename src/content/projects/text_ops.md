@@ -1,6 +1,6 @@
 ---
 name: Text Ops
-repo: https://github.com/polypixeldev/text_ops
+repo: polypixeldev/text_ops
 description: A simple desktop application built with Tauri to perform various operations on text
 stack:
   - React

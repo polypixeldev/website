@@ -1,6 +1,6 @@
 ---
 name: PolyPass
-repo: https://github.com/polypixeldev/polypass
+repo: polypixeldev/polypass
 description: A simple, secure, and easy to use password manager
 stack:
   - Dart

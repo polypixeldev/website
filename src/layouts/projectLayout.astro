@@ -64,7 +64,8 @@ const stars = Array(100).fill(null);
             />
             <a
               class="text-blue-400 text-center text-lg underline md:text-xl lg:text-2xl"
-              href={entry.data.repo}>{entry.data.repo}</a
+              href={`https://github.com/${entry.data.repo}`}
+              >{entry.data.repo}</a
             >
           </div>
           <p class="my-5 text-center text-3xl">{entry.data.description}</p>
