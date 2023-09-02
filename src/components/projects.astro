@@ -7,6 +7,9 @@ const projects = await getCollection("projects");
 
 <section id="projects" class="z-20 my-5 w-full">
   <h2 class="my-2 text-center font-space-grotesk text-5xl">Projects</h2>
+  <p class="text-center text-3xl">
+    Here's some stuff that I've either built or made major contributions to
+  </p>
   <div class="m-2 columns-1 md:columns-2 lg:columns-3">
     {projects.map((project) => <Project project={project} />)}
   </div>

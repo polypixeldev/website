@@ -7,6 +7,9 @@ const blogs = await getCollection("posts");
 
 <section id="blog" class="z-20 my-5 w-full">
   <h2 class="my-2 text-center font-space-grotesk text-5xl">Blog</h2>
+  <p class="text-center text-3xl">
+    Just a place where I write about random things
+  </p>
   <div class="m-2">
     {blogs.map((blog) => <Post blog={blog} />)}
   </div>
