@@ -1,11 +1,9 @@
 ---
-import Star from "../components/star.astro";
-import NavBar from "../components/navbar.astro";
 import TechIcon from "../components/techIcon.astro";
-import Floaters from "../components/floaters.astro";
 import { Image } from "astro:assets";
 
 import gh from "../images/contact/gh.webp";
+import BaseLayout from "./baseLayout.astro";
 
 import type { CollectionEntry } from "astro:content";
 
@@ -14,105 +12,47 @@ type Props = {
 };
 
 const { entry } = Astro.props;
-const stars = Array(100).fill(null);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta
-      name="description"
-      content={`Samuel Fernandez's project '${entry.data.name}'`}
-    />
-    <title>Samuel Fernandez</title>
-
-    <style is:global>
-      @font-face {
-        font-family: "Dosis";
-        font-display: swap;
-        src: url("/fonts/Dosis.ttf") format("truetype");
-      }
-      @font-face {
-        font-family: "Space Grotesk";
-        font-display: swap;
-        src: url("/fonts/SpaceGrotesk.ttf") format("truetype");
-      }
-      @font-face {
-        font-family: "IBM Plex Sans";
-        font-display: swap;
-        src: url("/fonts/IBMPlexSans.ttf") format("truetype");
-      }
-    </style>
-
-    <style is:global>
-      .content {
-        font-family: "IBM Plex Sans", sans-serif;
-      }
-
-      .content h1 {
-        font-size: 2.5rem;
-        line-height: 3.5rem;
-      }
-
-      .content p {
-        line-height: 2.1rem;
-        margin: 0.75rem 0;
-      }
-
-      .content a {
-        color: theme(colors.blue);
-        text-decoration: underline;
-      }
-    </style>
-  </head>
-  <body class="text-white dark:bg-bgc">
-    <div>
-      <Floaters />
-    </div>
-    <div>
-      {stars.map(() => <Star />)}
-    </div>
-    <NavBar />
-    <main class="m-5 flex flex-col items-center justify-start bg-black md:m-10">
-      <div class="z-20 flex w-full flex-col items-center justify-start">
-        <div class="flex flex-col items-center justify-start">
-          <h2 class="font-space-grotesk text-4xl md:text-5xl lg:text-6xl">
-            {entry.data.name}
-          </h2>
-          <div class="flex w-5/6 flex-row items-center justify-center">
-            <Image
-              src={gh}
-              alt="The GitHub logo"
-              class="mx-1 h-7 w-7 rounded-full border-2 border-black bg-white md:mx-2"
-            />
-            <a
-              class="text-blue-400 text-center text-lg underline md:text-xl lg:text-2xl"
-              href={`https://github.com/${entry.data.repo}`}
-              target="_blank">{entry.data.repo}</a
-            >
-          </div>
-          <p class="my-5 text-center text-3xl">{entry.data.description}</p>
-          <div class="flex flex-row flex-wrap items-center justify-center">
-            {entry.data.stack.map((tech) => <TechIcon name={tech} />)}
-          </div>
+<BaseLayout>
+  <meta
+    name="description"
+    content={`Samuel Fernandez's project '${entry.data.name}'`}
+  />
+  <main class="m-5 flex flex-col items-center justify-start bg-black md:m-10">
+    <div class="z-20 flex w-full flex-col items-center justify-start">
+      <div class="flex flex-col items-center justify-start">
+        <h2 class="font-space-grotesk text-4xl md:text-5xl lg:text-6xl">
+          {entry.data.name}
+        </h2>
+        <div class="flex w-5/6 flex-row items-center justify-center">
+          <Image
+            src={gh}
+            alt="The GitHub logo"
+            class="mx-1 h-7 w-7 rounded-full border-2 border-black bg-white md:mx-2"
+          />
+          <a
+            class="text-blue-400 text-center text-lg underline md:text-xl lg:text-2xl"
+            href={`https://github.com/${entry.data.repo}`}
+            target="_blank">{entry.data.repo}</a
+          >
+        </div>
+        <p class="my-5 text-center text-3xl">{entry.data.description}</p>
+        <div class="flex flex-row flex-wrap items-center justify-center">
+          {entry.data.stack.map((tech) => <TechIcon name={tech} />)}
         </div>
       </div>
-      <div
-        class="content z-20 mt-10 flex w-full flex-col items-start justify-start border-2 border-border bg-bgc p-5 text-xl [filter:drop-shadow(5px_5px_20px_rgba(255,255,255,0.25))] md:w-5/6 md:px-10 lg:text-2xl">
-        <img
-          src={`/images/projectImages/${entry.data.name}.webp`}
-          alt={`A screenshot of ${entry.data.name}`}
-          class="mb-5 w-full self-center md:w-[calc(100vw/2)]"
-        />
-        <div class="mx-3 md:mx-20 lg:mx-40">
-          <slot />
-        </div>
+    </div>
+    <div
+      class="content z-20 mt-10 flex w-full flex-col items-start justify-start border-2 border-border bg-bgc p-5 text-xl [filter:drop-shadow(5px_5px_20px_rgba(255,255,255,0.25))] md:w-5/6 md:px-10 lg:text-2xl">
+      <img
+        src={`/images/projectImages/${entry.data.name}.webp`}
+        alt={`A screenshot of ${entry.data.name}`}
+        class="mb-5 w-full self-center md:w-[calc(100vw/2)]"
+      />
+      <div class="mx-3 md:mx-20 lg:mx-40">
+        <slot />
       </div>
-    </main>
-    <script src="../util/drawFloaters.ts"></script>
-    <script src="../util/drawStars.ts"></script>
-  </body>
-</html>
+    </div>
+  </main>
+</BaseLayout>

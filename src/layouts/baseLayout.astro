@@ -1,0 +1,154 @@
+---
+import { Image } from "astro:assets";
+
+import Floater from "../components/floater.astro";
+import Star from "../components/star.astro";
+import gh from "../images/contact/gh.webp";
+import email from "../images/contact/email.svg";
+
+const stars = Array(100).fill(null);
+const floaters = [
+  {
+    id: "impostor",
+    name: "Impostor",
+    description: "Samuel was not The Impostor. 1 Impostor remains.",
+    image: "/images/floaters/impostor.webp",
+  },
+  {
+    id: "hackclub",
+    name: "Hack Club",
+    description:
+      "Hack Club is a global nonprofit network of high school makers & student-led coding clubs! Check it out at https://hackclub.com",
+    image: "/images/floaters/hackclub.svg",
+  },
+  {
+    id: "icon",
+    name: "Me!",
+    description: "My icon on the interwebs. Made in blender!",
+    image: "/images/floaters/icon.webp",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <slot name="metadata" />
+    <title>Samuel Fernandez</title>
+
+    <style is:global>
+      @font-face {
+        font-family: "Dosis";
+        font-display: swap;
+        src: url("/fonts/Dosis.ttf") format("truetype");
+      }
+      @font-face {
+        font-family: "Space Grotesk";
+        font-display: swap;
+        src: url("/fonts/SpaceGrotesk.ttf") format("truetype");
+      }
+      @font-face {
+        font-family: "IBM Plex Sans";
+        font-display: swap;
+        src: url("/fonts/IBMPlexSans.ttf") format("truetype");
+      }
+    </style>
+
+    <style is:global>
+      .content {
+        font-family: "IBM Plex Sans", sans-serif;
+      }
+
+      .content h1 {
+        font-size: 2.5rem;
+        line-height: 3.5rem;
+      }
+
+      .content p {
+        line-height: 2.1rem;
+        margin: 0.75rem 0;
+      }
+
+      .content a {
+        color: theme(colors.blue);
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body class="text-white dark:bg-bgc">
+    <div>
+      {
+        floaters.map((floater) => (
+          <Floater
+            id={floater.id}
+            name={floater.name}
+            description={floater.description}
+            image={floater.image}
+          />
+        ))
+      }
+    </div>
+    <div>
+      {stars.map(() => <Star />)}
+    </div>
+    <nav
+      class="sticky top-0 z-30 flex w-screen flex-row items-center justify-center bg-bgc bg-opacity-70 p-3 font-space-grotesk lg:grid lg:grid-cols-2">
+      <div
+        class="flex w-screen flex-col items-center justify-start md:flex-row md:justify-around lg:w-auto lg:justify-center">
+        <h1>
+          <a
+            href="/"
+            class="group w-min text-center text-4xl md:text-5xl lg:w-max">
+            Samuel Fernandez
+            <span
+              class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
+            ></span>
+          </a>
+        </h1>
+        <div class="flex flex-row items-center justify-around lg:mx-5">
+          <a target="_blank" href="https://github.com/polypixeldev">
+            <Image
+              src={gh}
+              alt="The GitHub logo"
+              class="m-2 h-7 w-7 rounded-full bg-white transition-all duration-300 hover:[box-shadow:0px_0px_10px_#fff] md:h-10 md:w-10"
+            />
+          </a>
+          <a href={`mailto:${import.meta.env.EMAIL}`}>
+            <Image
+              src={email}
+              alt="An email icon"
+              class="m-2 w-7 rounded-md transition-all duration-300 hover:[box-shadow:0px_0px_10px_#fff] md:w-10"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="hidden flex-row items-center justify-around text-4xl lg:flex">
+        <a href="/#about" class="group">
+          About Me
+          <span
+            class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
+          ></span>
+        </a>
+        <a href="/#projects" class="group">
+          Projects
+          <span
+            class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
+          ></span>
+        </a>
+        <a href="/#blog" class="group">
+          Blog
+          <span
+            class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
+          ></span>
+        </a>
+      </div>
+    </nav>
+
+    <slot />
+    <script src="../util/drawFloaters.ts"></script>
+    <script src="../util/drawStars.ts"></script>
+  </body>
+</html>

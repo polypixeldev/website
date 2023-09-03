@@ -14,5 +14,5 @@ export default defineConfig({
     assets: true,
   },
   // TODO: set to my site url
-  site: "SET_TO_SITE_URL",
+  site: "http://localhost:3000",
 });

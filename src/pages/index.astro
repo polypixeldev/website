@@ -1,59 +1,68 @@
 ---
-import Star from "../components/star.astro";
-import NavBar from "../components/navbar.astro";
-import About from "../components/about.astro";
-import Projects from "../components/projects.astro";
-import Blog from "../components/blog.astro";
-import Floaters from "../components/floaters.astro";
+import { getCollection } from "astro:content";
 
-const stars = Array(100).fill(null);
+import Project from "../components/project.astro";
+import Post from "../components/post.astro";
+import BaseLayout from "../layouts/baseLayout.astro";
+
+const projects = await getCollection("projects");
+const blogs = await getCollection("posts");
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta
-      name="description"
-      content="Homepage of Samuel Fernandez, a nerdy student and developer who loves learning,
-    making cool stuff, and solving problems!"
-    />
-    <title>Samuel Fernandez</title>
-
-    <style is:global>
-      @font-face {
-        font-family: "Dosis";
-        font-display: swap;
-        src: url("/fonts/Dosis.ttf") format("truetype");
-      }
-      @font-face {
-        font-family: "Space Grotesk";
-        font-display: swap;
-        src: url("/fonts/SpaceGrotesk.ttf") format("truetype");
-      }
-    </style>
-  </head>
-  <body class="text-white dark:bg-bgc">
-    <div>
-      <Floaters />
-    </div>
-    <div class="fixed">
-      {stars.map(() => <Star />)}
-    </div>
-    <NavBar />
+<BaseLayout>
+  <meta
+    name="description"
+    content="Homepage of Samuel Fernandez, a nerdy student and developer who loves learning,
+making cool stuff, and solving problems!"
+    slot="metadata"
+  />
+  <main>
     <div class="flex items-center justify-center">
       <div class="w-5/6">
         <div class="flex flex-col items-center justify-start">
-          <About />
-          <Projects />
-          <Blog />
+          <section
+            id="about"
+            class="z-20 my-20 flex w-3/4 flex-col items-center justify-center justify-items-center rounded-sm border-2 border-border bg-bgc text-center text-white transition-all duration-300 [filter:drop-shadow(5px_5px_20px_rgba(255,255,255,0.25))] hover:[filter:drop-shadow(5px_5px_20px_rgba(255,255,255,0.5))] lg:w-2/3">
+            <p class="p-8 text-3xl md:p-16 md:text-4xl lg:text-5xl">
+              Hey! I&apos;m Samuel, a nerdy student and developer who loves
+              learning, making cool stuff, and solving problems!
+            </p>
+          </section>
+
+          <section id="projects" class="z-20 my-5 w-full">
+            <h2 class="my-2 text-center font-space-grotesk text-5xl">
+              Projects
+            </h2>
+            <p class="text-center text-3xl">
+              Here's some stuff that I've either built or made major
+              contributions to
+            </p>
+            <div class="m-2 columns-1 md:columns-2 lg:columns-3">
+              {projects.map((project) => <Project project={project} />)}
+            </div>
+          </section>
+          <section id="blog" class="z-20 my-5 w-full">
+            <h2 class="my-2 text-center font-space-grotesk text-5xl">Blog</h2>
+            <p class="text-center text-3xl">
+              Just a place where I write about random things
+            </p>
+            <div class="m-2">
+              {blogs.map((blog) => <Post blog={blog} />)}
+            </div>
+          </section>
         </div>
       </div>
     </div>
+  </main>
+  <script>
+    document.querySelectorAll(".projectDiv").forEach((div) => {
+      div.addEventListener("click", () => {
+        const slug = div.attributes.getNamedItem("data-slug")?.value;
 
-    <script src="../util/drawFloaters.ts"></script>
-    <script src="../util/drawStars.ts"></script>
-  </body>
-</html>
+        if (slug) {
+          window.location.href = `/projects/${slug}`;
+        }
+      });
+    });
+  </script>
+</BaseLayout>
