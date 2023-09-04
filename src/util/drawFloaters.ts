@@ -24,8 +24,10 @@ floaters.forEach((floater) => {
   let x = Math.random() * sWidth;
   let y = Math.random() * sHeight;
 
-  const floaterW = floater!.clientWidth;
-  const floaterH = floater!.clientHeight;
+  const floaterW = floater!.clientWidth + 10;
+  const floaterH = floater!.clientHeight + 10;
+
+  console.log(floaterW, floaterH);
 
   let dirX = Math.random() + 0.25;
   let dirY = Math.random() + 0.25;
@@ -46,5 +48,6 @@ floaters.forEach((floater) => {
     window.requestAnimationFrame(animate);
   }
 
+  floater.style.opacity = "100";
   window.requestAnimationFrame(animate);
 });

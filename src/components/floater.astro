@@ -13,7 +13,9 @@ const colors = [
 const color = colors[Math.floor(Math.random() * colors.length)];
 ---
 
-<div class="floater fixed z-10 cursor-pointer p-1 hover:animate-spin" id={id}>
+<div
+  class="floater fixed z-10 cursor-pointer p-1 opacity-0 hover:animate-spin"
+  id={id}>
   <img src={image} alt={name} class="h-10 w-10" />
 </div>
 <dialog
