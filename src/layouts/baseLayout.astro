@@ -4,7 +4,6 @@ import { Image } from "astro:assets";
 import Floater from "../components/floater.astro";
 import Star from "../components/star.astro";
 import gh from "../images/contact/gh.webp";
-import email from "../images/contact/email.svg";
 
 const stars = Array(100).fill(null);
 const floaters = [
@@ -121,13 +120,6 @@ const floaters = [
               class="m-2 h-7 w-7 rounded-full bg-white transition-all duration-300 hover:[box-shadow:0px_0px_10px_#fff] md:h-10 md:w-10"
             />
           </a>
-          <a href={`mailto:${import.meta.env.EMAIL}`}>
-            <Image
-              src={email}
-              alt="An email icon"
-              class="m-2 w-7 rounded-md transition-all duration-300 hover:[box-shadow:0px_0px_10px_#fff] md:w-10"
-            />
-          </a>
         </div>
       </div>
       <div class="hidden flex-row items-center justify-around text-4xl lg:flex">
@@ -139,12 +131,6 @@ const floaters = [
         </a>
         <a href="/#projects" class="group">
           Projects
-          <span
-            class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
-          ></span>
-        </a>
-        <a href="/#blog" class="group">
-          Blog
           <span
             class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
           ></span>

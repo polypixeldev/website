@@ -2,11 +2,9 @@
 import { getCollection } from "astro:content";
 
 import Project from "../components/project.astro";
-import Post from "../components/post.astro";
 import BaseLayout from "../layouts/baseLayout.astro";
 
 const projects = await getCollection("projects");
-const blogs = await getCollection("posts");
 ---
 
 <BaseLayout>
@@ -39,15 +37,6 @@ making cool stuff, and solving problems!"
             </p>
             <div class="m-2 columns-1 md:columns-2 lg:columns-3">
               {projects.map((project) => <Project project={project} />)}
-            </div>
-          </section>
-          <section id="blog" class="z-20 my-5 w-full">
-            <h2 class="my-2 text-center font-space-grotesk text-5xl">Blog</h2>
-            <p class="text-center text-3xl">
-              Just a place where I write about random things
-            </p>
-            <div class="m-2">
-              {blogs.map((blog) => <Post blog={blog} />)}
             </div>
           </section>
         </div>
