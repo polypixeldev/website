@@ -1,5 +1,5 @@
 const screenHeight = window.innerHeight;
-const screenWidth = window.innerWidth;
+const screenWidth = document.body.clientWidth;
 
 const stars = document.querySelectorAll<HTMLDivElement>(".stars");
 function handleResize() {
