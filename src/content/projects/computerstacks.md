@@ -1,5 +1,6 @@
 ---
 name: ComputerStacks
+color: orange
 repo: polypixeldev/computerstacks
 description: A digital collection of computer-related resources and support
 stack:

@@ -1,5 +1,6 @@
 ---
 name: Singularity
+color: yellow
 repo: polypixeldev/Singularity
 description: A free, easy to use Discord bot
 stack:

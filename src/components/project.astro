@@ -11,17 +11,8 @@ interface Props {
 }
 
 const { project }: Props = Astro.props;
-const colors = [
-  "orange",
-  "green",
-  "blue",
-  "purple",
-  "red",
-  "dark-green",
-  "yellow",
-];
 
-const color = colors[Math.floor(Math.random() * colors.length)];
+const color = project.data.color;
 ---
 
 <div class="z-20 inline-block w-full">
