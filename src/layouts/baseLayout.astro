@@ -39,6 +39,11 @@ const floaters = [
     <title>Samuel Fernandez</title>
 
     <style is:global>
+      :root {
+        scroll-behavior: smooth;
+        scroll-padding-top: 10vh;
+      }
+
       @font-face {
         font-family: "Dosis";
         font-display: swap;
@@ -54,9 +59,7 @@ const floaters = [
         font-display: swap;
         src: url("/fonts/IBMPlexSans.ttf") format("truetype");
       }
-    </style>
 
-    <style is:global>
       .content {
         font-family: "IBM Plex Sans", sans-serif;
         overflow-wrap: break-word;
