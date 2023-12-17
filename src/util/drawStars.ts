@@ -6,7 +6,6 @@ function handleResize() {
   stars.forEach((star) => {
     star.style.left = Math.floor(Math.random() * screenWidth) + "px";
     star.style.top = Math.floor(Math.random() * screenHeight) + "px";
-    star.style.display = "block";
   });
 }
 window.addEventListener("resize", handleResize);

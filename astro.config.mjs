@@ -10,9 +10,6 @@ export default defineConfig({
       devSourcemap: true,
     },
   },
-  experimental: {
-    assets: true,
-  },
   // TODO: set to my site url
   site: "http://localhost:3000",
 });

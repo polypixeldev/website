@@ -8,18 +8,26 @@ const floaters = document.querySelectorAll<HTMLDivElement>(".floater");
 const toggle = document.getElementById("toggle") as HTMLImageElement | null;
 
 toggle?.addEventListener("click", () => {
+  toggleFloaters();
+  toggleStars();
+  startAnimation();
+});
+
+toggleFloaters();
+
+function toggleFloaters() {
   document
     .querySelectorAll(".floater")
     .forEach((floater) => floater.classList.toggle("hidden"));
-  document
-    .querySelectorAll(".star")
-    .forEach((star) => star.classList.toggle("hidden"));
-  // toggle!.src = toggle!.src.endsWith("/images/ball_blank.svg")
-  //   ? "/images/ball_full.svg"
-  //   : "/images/ball_blank.svg";
+}
 
-  startAnimation();
-});
+function toggleStars() {
+  document
+    .querySelectorAll(".stars")
+    .forEach((star) => star.classList.toggle("hidden"));
+}
+
+startAnimation();
 
 function startAnimation() {
   floaters.forEach((floater) => {
