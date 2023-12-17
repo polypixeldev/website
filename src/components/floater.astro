@@ -19,7 +19,7 @@ const color = colors[Math.floor(Math.random() * colors.length)];
   <img src={image} alt={name} class="h-10 w-10" />
 </div>
 <dialog
-  class={`border-${color}-border bg-${color} hidden flex-col items-center justify-start rounded-md border-4 p-5 max-w-7xl`}
+  class={`border-${color}-border bg-${color} hidden flex-col shadow-md shadow-black items-center justify-start rounded-md border-4 p-5 max-w-7xl`}
   id={`${id}-dialog`}>
   <p class="text-center text-5xl">{name}</p>
   <p class="my-2 text-center text-3xl">{description}</p>
