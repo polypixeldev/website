@@ -1,8 +1,6 @@
 ---
 import TechIcon from "../components/techIcon.astro";
-import { Image } from "astro:assets";
 
-import gh from "../images/contact/gh.webp";
 import BaseLayout from "./baseLayout.astro";
 
 import type { CollectionEntry } from "astro:content";
@@ -25,11 +23,11 @@ const { entry } = Astro.props;
         <h2 class="font-space-grotesk text-3xl md:text-4xl lg:text-5xl">
           {entry.data.name}
         </h2>
-        <div class="flex w-5/6 flex-row items-center justify-center">
-          <Image
-            src={gh}
+        <div class="flex flex-row items-center justify-center">
+          <img
+            src="/images/contact/gh.svg"
             alt="The GitHub logo"
-            class="mx-1 h-7 w-7 rounded-full border-2 border-black bg-white md:mx-2"
+            class="mx-1 h-7 w-7 rounded-full border-2 border-black md:mx-2"
           />
           <a
             class="text-blue-400 text-center text-lg underline md:text-xl lg:text-2xl"
@@ -40,7 +38,8 @@ const { entry } = Astro.props;
         <p class="my-5 text-center text-xl lg:text-2xl">
           {entry.data.description}
         </p>
-        <div class="flex flex-row flex-wrap items-center justify-center">
+        <div
+          class="flex w-full flex-row flex-wrap items-center justify-center rounded-md border-2 border-slate-500 bg-slate-800">
           {entry.data.stack.map((tech) => <TechIcon name={tech} />)}
         </div>
       </div>
@@ -50,7 +49,7 @@ const { entry } = Astro.props;
       <img
         src={`/images/projectImages/${entry.data.name}.webp`}
         alt={`A screenshot of ${entry.data.name}`}
-        class="mb-5 w-full md:w-[calc(100vw/2)]"
+        class="mb-5 w-full rounded-md md:w-[calc(100vw/2)]"
       />
       <div class="mx-3 w-full md:mx-20 md:w-[calc(100vw/2)] lg:mx-40">
         <slot />

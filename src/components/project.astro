@@ -1,8 +1,5 @@
 ---
 import TechIcon from "./techIcon.astro";
-import { Image } from "astro:assets";
-
-import gh from "../images/contact/gh.webp";
 
 import type { CollectionEntry } from "astro:content";
 
@@ -20,11 +17,11 @@ const color = project.data.color;
     data-slug={project.slug}
     class={`projectDiv cursor-pointer bg-${color} transition-all duration-300 hover:[filter:drop-shadow(5px_5px_5px_theme('colors.${color}-border'))] border-4 border-${color}-border m-2 flex flex-col items-center justify-start rounded-lg p-2 text-black lg:p-5`}>
     <p class="text-center text-3xl">{project.data.name}</p>
-    <div class="flex flex-row items-center justify-center">
-      <Image
-        src={gh}
+    <div class="my-2 flex flex-row items-center justify-center">
+      <img
+        src="/images/contact/gh.svg"
         alt="The GitHub logo"
-        class="mx-1 h-7 w-7 rounded-full border-2 border-black bg-white md:mx-2"
+        class="mx-1 h-7 w-7 rounded-full border-2 border-black bg-black md:mx-2"
       />
       <a
         href={`https://github.com/${project.data.repo}`}
@@ -32,9 +29,11 @@ const color = project.data.color;
         class="text-blue-700 text-center text-xl">{project.data.repo}</a
       >
     </div>
+    <img
+      src={`/images/projectImages/${project.data.name}.webp`}
+      alt={`A screenshot of ${project.data.name}`}
+      class="mb-5 w-full rounded-sm md:w-[calc(100vw/2)]"
+    />
     <p class="my-5 text-center text-xl">{project.data.description}</p>
-    <div class="flex flex-row flex-wrap items-center justify-center">
-      {project.data.stack.map((tech) => <TechIcon name={tech} />)}
-    </div>
   </div>
 </div>

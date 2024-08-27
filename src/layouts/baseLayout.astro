@@ -3,7 +3,6 @@ import { Image } from "astro:assets";
 
 import Floater from "../components/floater.astro";
 import Star from "../components/star.astro";
-import gh from "../images/contact/gh.webp";
 import keyframes from "../images/keyframes.svg";
 
 const stars = Array(100).fill(null);
@@ -116,7 +115,7 @@ const floaters = [
         <h1>
           <a
             href="/"
-            class="group w-min text-center text-4xl md:text-5xl lg:w-max">
+            class="group w-min text-center text-3xl md:text-4xl lg:w-max">
             Samuel Fernandez
             <span
               class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
@@ -125,17 +124,17 @@ const floaters = [
         </h1>
         <div class="flex flex-row items-center justify-around lg:mx-5">
           <a target="_blank" href="https://github.com/polypixeldev">
-            <Image
-              src={gh}
+            <img
+              src="/images/contact/gh.svg"
               alt="The GitHub logo"
-              class="m-2 h-7 w-7 rounded-full bg-white transition-all duration-300 hover:[box-shadow:0px_0px_10px_#fff] md:h-10 md:w-10"
+              class="m-2 h-5 w-5 rounded-full transition-all duration-300 hover:[box-shadow:0px_0px_10px_#fff] md:h-8 md:w-8"
             />
           </a>
         </div>
       </div>
-      <div class="hidden flex-row items-center justify-around text-4xl lg:flex">
+      <div class="hidden flex-row items-center justify-around text-3xl lg:flex">
         <a href="/#about" class="group">
-          About Me
+          About
           <span
             class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
           ></span>
