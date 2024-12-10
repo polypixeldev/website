@@ -16,7 +16,7 @@
     "astro": "^4.16.14",
     "markdown-it": "^14.1.0",
     "sanitize-html": "^2.13.1",
-    "tailwindcss": "^3.4.15"
+    "tailwindcss": "^3.4.16"
   },
   "devDependencies": {
     "@types/markdown-it": "^14.1.2",
