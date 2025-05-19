@@ -100,53 +100,57 @@ const floaters = [
     <div>
       {stars.map(() => <Star />)}
     </div>
-    <nav
-      class="sticky top-0 z-30 flex w-full flex-row items-center justify-center bg-bgc bg-opacity-70 p-3 font-space-grotesk lg:grid lg:grid-cols-2">
-      <Image
-        id="toggle"
-        class="absolute right-4 top-4 cursor-pointer rounded-full hover:animate-pulse"
-        src={keyframes}
-        alt="Empty ball"
-        width={40}
-        height={40}
-      />
-      <div
-        class="flex w-screen flex-col items-center justify-start md:flex-row md:justify-around lg:w-auto lg:justify-center">
-        <h1>
-          <a
-            href="/"
-            class="group w-min text-center text-3xl md:text-4xl lg:w-max">
-            Samuel Fernandez
+    <div
+      class="sticky top-0 z-30 flex w-full flex-row items-center justify-center">
+      <nav
+        class="flex w-5/6 flex-row items-center justify-between bg-bgc bg-opacity-70 p-3 font-space-grotesk">
+        <div
+          class="flex w-screen flex-row items-center justify-start lg:w-auto lg:justify-center">
+          <h1>
+            <a
+              href="/"
+              class="group w-min text-center text-3xl md:text-4xl lg:w-max">
+              Samuel Fernandez
+              <span
+                class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
+              ></span>
+            </a>
+          </h1>
+          <div class="flex flex-row items-center justify-around lg:mx-5">
+            <a target="_blank" href="https://github.com/polypixeldev">
+              <img
+                src="/images/contact/gh.svg"
+                alt="The GitHub logo"
+                class="m-2 h-5 w-5 rounded-full transition-all duration-300 hover:[box-shadow:0px_0px_10px_#fff] md:h-8 md:w-8"
+              />
+            </a>
+          </div>
+        </div>
+        <div
+          class="hidden w-1/2 flex-row items-center justify-around text-3xl lg:flex">
+          <a href="/#about" class="group">
+            About
             <span
               class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
             ></span>
           </a>
-        </h1>
-        <div class="flex flex-row items-center justify-around lg:mx-5">
-          <a target="_blank" href="https://github.com/polypixeldev">
-            <img
-              src="/images/contact/gh.svg"
-              alt="The GitHub logo"
-              class="m-2 h-5 w-5 rounded-full transition-all duration-300 hover:[box-shadow:0px_0px_10px_#fff] md:h-8 md:w-8"
-            />
+          <a href="/#projects" class="group">
+            Projects
+            <span
+              class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
+            ></span>
           </a>
         </div>
-      </div>
-      <div class="hidden flex-row items-center justify-around text-3xl lg:flex">
-        <a href="/#about" class="group">
-          About
-          <span
-            class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
-          ></span>
-        </a>
-        <a href="/#projects" class="group">
-          Projects
-          <span
-            class="block h-0.5 max-w-0 bg-white transition-all duration-500 group-hover:max-w-full"
-          ></span>
-        </a>
-      </div>
-    </nav>
+        <Image
+          id="toggle"
+          class="cursor-pointer rounded-full hover:animate-pulse"
+          src={keyframes}
+          alt="Empty ball"
+          width={40}
+          height={40}
+        />
+      </nav>
+    </div>
 
     <slot />
     <script src="../util/drawStars.ts"></script>
