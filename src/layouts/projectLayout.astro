@@ -38,10 +38,15 @@ const { entry } = Astro.props;
         <p class="my-5 text-center text-xl lg:text-2xl">
           {entry.data.description}
         </p>
-        <div
-          class="flex w-full flex-row flex-wrap items-center justify-center rounded-md border-2 border-slate-500 bg-slate-800">
-          {entry.data.stack.map((tech) => <TechIcon name={tech} />)}
-        </div>
+        {
+          entry.data.stack.length > 0 && (
+            <div class="flex w-full flex-row flex-wrap items-center justify-center rounded-md border-2 border-slate-500 bg-slate-800">
+              {entry.data.stack.map((tech) => (
+                <TechIcon name={tech} />
+              ))}
+            </div>
+          )
+        }
       </div>
     </div>
     <div
