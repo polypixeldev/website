@@ -1,5 +1,6 @@
 ---
 name: Counterspell Tampa
+featured: true
 color: purple
 repo: polypixeldev/counterspell
 description: A high-school game jam in Tampa, part of 50+ similar events around the world!

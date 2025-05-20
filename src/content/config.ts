@@ -4,6 +4,7 @@ const projectsCollection = defineCollection({
   type: "content",
   schema: z.object({
     name: z.string(),
+    featured: z.boolean(),
     color: z.enum([
       "orange",
       "green",

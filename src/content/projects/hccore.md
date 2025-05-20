@@ -1,5 +1,6 @@
 ---
 name: HCCore
+featured: false
 color: dark-green
 repo: hackclub/HCCore
 description: A custom plugin for the Hack Club Minecraft server.

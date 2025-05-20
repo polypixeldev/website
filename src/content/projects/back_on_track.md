@@ -1,5 +1,6 @@
 ---
 name: Back On Track America Mobile App
+featured: true
 color: blue
 repo: backontrackus/app
 description: Mobile app for the nonprofit Back on Track America.

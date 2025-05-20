@@ -1,5 +1,6 @@
 ---
 name: Nest
+featured: true
 color: purple
 repo: hackclub/nest
 description: Free, powerful, and versatile compute infrastructure for all high school hackers!

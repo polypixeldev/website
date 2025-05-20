@@ -1,5 +1,6 @@
 ---
 name: TampaHacks
+featured: true
 color: blue
 repo: polypixeldev/tampahacks
 description: Tampa's first high-school game jam!
