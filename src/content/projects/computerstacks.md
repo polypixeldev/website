@@ -25,7 +25,7 @@ The obvious way to get started is just by looking for resources using Google (or
 
 # What
 
-Put simply, ComputerStacks is a digital collection of computer-related resources and support. With ComputerStacks, you can search using either the search bar, through the structured catalog, or by going throguh a roadmap. The resources you'll get from ComputerStacks aren't indexed and ranked by a computer algorithm - they've been chosen by real humans that actually found the resources to be accurate and useful.
+Put simply, ComputerStacks is a digital collection of computer-related resources and support. With ComputerStacks, you can search using either the search bar, through the structured catalog, or by going through a roadmap. The resources you'll get from ComputerStacks aren't indexed and ranked by a computer algorithm - they've been chosen by real humans that actually found the resources to be accurate and useful.
 
 ---
 
